@@ -21,14 +21,33 @@
                   <?php require_once('inc/navbar.php') ?>
                 <!-- End of Topbar -->
 
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
-
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Add Category</h1>
-
+            <!-- Begin Page Content -->
+            <div class="container-fluid"> 
+                <!-- Page Heading -->
+                <h1 class="h3 mb-4 text-gray-800">Add Category</h1>
+                <div class="row">
+                    <div class="col">
+                        <form method="" action="post">
+                            <div class="form-group">
+                                <label>Category Name</label>
+                                 <input type="text" class="form-control form-control-user" name="category_name"  placeholder="Please enter category name">
+                            </div>
+                            <div class="form-group">
+                                <label>Category Name</label>
+                                <select class="form-control" name="category_purpose">
+                                    <option value="income">Income</option>
+                                    <option value="expense">Expense</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" name="inset-btn" class="btn btn-success" value="Add Category">
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <!-- /.container-fluid -->
+
+            </div>
+            <!-- /.container-fluid -->
 
             </div>
             <!-- End of Main Content -->
@@ -77,6 +96,35 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+
+
+
+
+    <?php  
+
+        $conn = mysqli_connect('localhost', 'root', '', 'ema' );
+        try {  
+ 
+            if(isset($_POST['insert-btn'])) {
+                // Retrieve form data
+                $category_name = $_POST['category_name'];
+                $category_purpose = $_POST['category_purpose'];
+
+                if (isset($_POST['btn_submit'])) {
+					echo $username = $_POST["username"];
+					echo $password = $_POST["password"];
+				} 
+
+                // Provide feedback to the user
+                echo "Category added successfully.";
+            }
+        } catch(PDOException $e) {
+            // Handle database connection errors
+            echo "Error: " . $e->getMessage();
+        }
+ 
+        ?>
+
 
 </body>
 
