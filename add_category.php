@@ -103,24 +103,19 @@
     <?php  
 
         $conn = mysqli_connect('localhost', 'root', '', 'ema' );
-        try {  
- 
-            if(isset($_POST['insert-btn'])) {
-                // Retrieve form data
-                $category_name = $_POST['category_name'];
-                $category_purpose = $_POST['category_purpose'];
+       
+        if(isset($_POST['insert-btn'])) {
+            // Retrieve form data
+            $category_name = $_POST['category_name'];
+            $category_purpose = $_POST['category_purpose'];
 
-                if (isset($_POST['btn_submit'])) {
-					echo $username = $_POST["username"];
-					echo $password = $_POST["password"];
-				} 
+            if (isset($_POST['btn_submit'])) {
+                echo $username = $_POST["username"];
+                echo $password = $_POST["password"];
+            } 
 
-                // Provide feedback to the user
-                echo "Category added successfully.";
-            }
-        } catch(PDOException $e) {
-            // Handle database connection errors
-            echo "Error: " . $e->getMessage();
+            // Provide feedback to the user
+            echo "Category added successfully.";
         }
  
         ?>
