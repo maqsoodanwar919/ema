@@ -41,7 +41,7 @@
                             </div>
                             <div class="form-group">
                             <input type="submit" class="btn btn-success btn_submit"   /> 
-                            </div>
+                            </div> 
                         </form>
                     </div>
                 </div>
@@ -102,17 +102,16 @@
 
     <!-- https://www.figma.com/file/Q3zN04QxxE8CQsX71wNPSc/Team-Collaboration-Landing-Page-(Community)?type=design&node-id=0-1&mode=design&t=Qv4C5lfzMKPxEeDI-0 -->
 
+    <?php   
+                                if (isset($_POST['.btn_submit'])) { 
+                                    echo $category_name = $_POST["category_name"];
+                                    echo $category_purpose = $_POST["category_purpose"];
+                                        
+                                } 
+                            ?>
 
 
-
-            <?php   
-				if (isset($_POST['btn_submit'])) {
-                    echo $category_name = $_POST["category_name"];
-					echo $category_purpose = $_POST["category_purpose"];
-					
-				} 
-			?>
-
+           
 
 </body>
 
