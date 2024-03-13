@@ -27,7 +27,7 @@
                 <h1 class="h3 mb-4 text-gray-800">Add Category</h1>
                 <div class="row">
                     <div class="col">
-                        <form method="" action="post">
+                        <form method="post" action="">
                             <div class="form-group">
                                 <label>Category Name</label>
                                  <input type="text" class="form-control form-control-user" name="category_name"  placeholder="Please enter category name">
@@ -40,7 +40,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <input type="submit" name="inset-btn" class="btn btn-success" value="Add Category">
+                            <input type="submit" class="btn btn-success btn_submit"   /> 
                             </div>
                         </form>
                     </div>
@@ -100,25 +100,15 @@
 
 
 
-    <?php  
 
-        $conn = mysqli_connect('localhost', 'root', '', 'ema' );
-       
-        if(isset($_POST['insert-btn'])) {
-            // Retrieve form data
-            $category_name = $_POST['category_name'];
-            $category_purpose = $_POST['category_purpose'];
 
-            if (isset($_POST['btn_submit'])) {
-                echo $username = $_POST["username"];
-                echo $password = $_POST["password"];
-            } 
-
-            // Provide feedback to the user
-            echo "Category added successfully.";
-        }
- 
-        ?>
+            <?php   
+				if (isset($_POST['btn_submit'])) {
+                    echo $category_name = $_POST["category_name"];
+					echo $category_purpose = $_POST["category_purpose"];
+					
+				} 
+			?>
 
 
 </body>
