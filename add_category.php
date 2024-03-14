@@ -27,22 +27,49 @@
                 <h1 class="h3 mb-4 text-gray-800">Add Category</h1>
                 <div class="row">
                     <div class="col">
-                        <form action="" mathed="post">
-                            <div class="form-group">
-                                <label>Category Name</label>
-                                    <input type="text" class="form-control form-control-user" name="category_name"  placeholder="Please enter category name">
-                            </div>
-                            <div class="form-group">
-                                <label>Category Name</label>
-                                <select class="form-control" name="category_purpose">
-                                    <option value="income">Income</option>
-                                    <option value="expense">Expense</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                            <input type="submit" class="btn btn-success btn_submit"   /> 
-                            </div> 
-                        </form>
+                    <form action="" mathed="GET">
+                    <div class="form-group">
+                        <label>Category Name</label>
+                        <input type="text" class="form-control form-control-user" name="category_name" placeholder="Please enter category name"> </div>
+                    <div class="form-group">
+                        <label>Category Name</label>
+                        <select class="form-control" name="category_purpose">
+                            <option value="" disabled="" selected="" hidden="">Select Category </option>
+                            <option value="income">Income</option>
+                            <option value="expense">Expense</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-success" name="btn-submit" value="Add Category" /> </div>
+                </form>
+
+
+                <?php     
+                    
+                    
+                    require_once('inc/db.php'); 
+
+                    if (isset($_GET['btn-submit'])) { 
+
+                        $category_name = $_GET['category_name'];
+                        $category_purpose = $_GET['category_purpose'];
+
+                        // insert data query 
+                        $insert_category = "INSERT INTO category(category_name, category_purpose) VALUES('$category_name','$category_purpose')";
+                        
+                        $run_category = mysqli_query($conn, $insert_category);
+
+                        if ($run_category === true) {
+                            echo "Date has been add";
+                        } else {
+                            echo "Date has been not add";
+                        } 
+                            
+                    }  
+
+                    ?>
+
+
                     </div>
                 </div>
 
@@ -86,7 +113,7 @@
             </div>
         </div>
     </div>
-
+    </div>
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -98,17 +125,9 @@
     <script src="js/sb-admin-2.min.js"></script>
 
 
-
-
-    <!-- https://www.figma.com/file/Q3zN04QxxE8CQsX71wNPSc/Team-Collaboration-Landing-Page-(Community)?type=design&node-id=0-1&mode=design&t=Qv4C5lfzMKPxEeDI-0 -->
-
-        <?php   
-            if (isset($_POST['btn_submit'])) { 
-                echo $category_name = $_POST["category_name"];
-                echo $category_purpose = $_POST["category_purpose"];
-                    
-            } 
-        ?>
+ 
+  
+     
 
 
            
