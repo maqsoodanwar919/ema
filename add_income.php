@@ -77,8 +77,8 @@
                             </div>
                         </div>  
                         </div> 
-                        <!-- <div class="form-group">
-                        <input type="submit" class="btn btn-success" name="btn-submit" value="Add Category" /> </div> -->
+                        <div class="form-group">
+                        <input type="submit" class="btn btn-success" name="inser_btn" value="Add Income" /> </div>
                 </form>
                 </div>   
             <!-- /.container-fluid -->
