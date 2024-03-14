@@ -24,55 +24,48 @@
             <!-- Begin Page Content -->
             <div class="container-fluid"> 
                 <!-- Page Heading -->
-                <h1 class="h3 mb-4 text-gray-800">All Category</h1>
+                <h1 class="h3 mb-4 text-gray-800">All Income</h1>
                 <div class="row">
-                    <div class="col"> 
-                    
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>ID</th> 
-                                            <th>Category Name</th> 
-                                            <th>Category Purpose</th> 
-                                        </tr>
-                                    </thead> 
-                                    <tbody>
-                                        <?php 
-                                        
-                                        
-                                        require_once('inc/db.php');
+                    <div class="col">  
+                     
+                    <form action="" mathed="GET">
+                    <div class="form-group">
+                        <label>Amount</label>
+                        <input type="text" class="form-control form-control-user" name="income_amount" placeholder="Please enter category name"> 
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                                <div class="form-group">
+                                <label>Category </label>
+                                <select class="form-control" name="category_id">
+                                    
+                                   <?php 
+                                     require_once('inc/db.php');
 
-                                        $select_category = "SELECT * FROM category"; 
-                                        
-                                        $run_category = mysqli_query($conn, $select_category);
+                                     $select_category = "SELECT * FROM category WHERE category_purpose='income'"; 
+                                      
+                                     $run_category = mysqli_query($conn, $select_category);  
 
+                                     while($row_category = mysqli_fetch_array($run_category)){ 
+                                         $category_id = $row_category['category_id'];
+                                         $category_name = $row_category['category_name']; 
 
-                                        while($row_category = mysqli_fetch_array($run_category)){ 
-                                            $category_id = $row_category['category_id'];
-                                            $category_name = $row_category['category_name'];
-                                            $category_purpose = $row_category['category_purpose'];
-
-                                        ?>
-                                        <tr>
-                                            <td><?php echo ucfirst($category_id); ?></td> 
-                                            <td><?php echo ucfirst($category_name); ?></td> 
-                                            <td><?php echo ucfirst($category_purpose); ?></td> 
-                                        </tr>
-                                        <?php } ?>
-                                    </tbody>
-                                </table>
+                                     ?> 
+                                 
+                                    <option ><?php echo  $category_name ?></option> 
+                                    <?php } ?>
+                                </select>
                             </div>
                         </div>
+                        <div class="col-6">
+                            
+                            </div>
                     </div>
-
-                
-
+                    
+                    
+                        <!-- <div class="form-group">
+                        <input type="submit" class="btn btn-success" name="btn-submit" value="Add Category" /> </div> -->
+                </form>
 
                     </div>
                 </div>
