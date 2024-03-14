@@ -1,5 +1,11 @@
-<?php require_once('inc/top_header.php') ?>
+<?php 
 
+require_once('inc/top_header.php');
+
+
+
+
+?>
 </head>
 
 <body id="page-top">
@@ -39,9 +45,8 @@
                                 <label>Category </label>
                                 <select class="form-control" name="category_id">
                                 <option value="" disabled="" selected="" hidden="">Select Category </option>
-                                   <?php 
-                                     require_once('inc/db.php');
-              
+                                   <?php  
+                                   require_once('inc/db.php');
                                      $select_category = "SELECT * FROM category WHERE category_purpose='income'"; 
 
                                      $run_category = mysqli_query($conn, $select_category);  
@@ -80,6 +85,37 @@
                         <div class="form-group">
                         <input type="submit" class="btn btn-success" name="inser_btn" value="Add Income" /> </div>
                 </form>
+
+
+
+                 <?php     
+                     
+                    
+                    // if (isset($_GET['inser_btn'])) { 
+
+                        // $income_amount = $_GET['income_amount'];
+                        // // $category_id = $_GET['category_id'];
+                        // $income_receipt = $_GET['income_receipt'];
+                        // $income_details = $_GET['income_details'];
+
+                        // // insert data query 
+                        // $insert_category = "INSERT INTO income(income_amount, income_receipt, income_details, income_date) VALUES('$income_amount', '$income_receipt' ,' $income_details')";
+                        
+                        // $run_category = mysqli_query($conn, $insert_category);
+
+                        // if ($run_category === true) {
+                        //     echo "Date has been add";
+                        // } else {
+                        //     echo "Date has been not add";
+                        // } 
+                            
+                    // }  
+
+                    // ?>
+
+
+
+
                 </div>   
             <!-- /.container-fluid -->
             </div> 
@@ -99,8 +135,7 @@
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
-    </a>
-
+    </a> 
     <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
@@ -147,3 +182,4 @@
 </body>
 
 </html>
+
