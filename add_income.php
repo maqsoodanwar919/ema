@@ -38,21 +38,22 @@
                                 <div class="form-group">
                                 <label>Category </label>
                                 <select class="form-control" name="category_id">
-                                    
+                                <option value="" disabled="" selected="" hidden="">Select Category </option>
                                    <?php 
                                      require_once('inc/db.php');
-
+              
                                      $select_category = "SELECT * FROM category WHERE category_purpose='income'"; 
-                                      
+
                                      $run_category = mysqli_query($conn, $select_category);  
 
+                                    //  while loop
                                      while($row_category = mysqli_fetch_array($run_category)){ 
                                          $category_id = $row_category['category_id'];
-                                         $category_name = $row_category['category_name']; 
+                                         $category_name = $row_category['category_name'];  
+                                     ?>  
 
-                                     ?> 
-                                 
-                                    <option ><?php echo  $category_name ?></option> 
+                                     <option value="<?php echo $category_id ?>" ><?php echo  $category_name ?></option> 
+
                                     <?php } ?>
                                 </select>
                             </div>
