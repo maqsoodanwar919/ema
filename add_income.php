@@ -59,24 +59,33 @@
                             </div>
                         </div>
                         <div class="col-6">
-                            
+                                <div class="form-group">
+                                <label>Receipt</label>
+                                <input type="file" class="form-control form-control-user" name="income_receipt"  /> 
                             </div>
-                    </div>
-                    
-                    
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label>Date</label>
+                                <input type="date" class="form-control form-control-user" name="income_date"  /> 
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label>Details</label>
+                                <textarea class="form-control" name="income_details"></textarea>
+                            </div>
+                        </div>  
+                        </div> 
                         <!-- <div class="form-group">
                         <input type="submit" class="btn btn-success" name="btn-submit" value="Add Category" /> </div> -->
                 </form>
-
-                    </div>
-                </div>
-
-            </div>
+                </div>   
             <!-- /.container-fluid -->
-
-            </div>
+            </div> 
+            </div> 
             <!-- End of Main Content -->
-
+                                     </div> 
             <!-- Footer -->
              <?php require_once('inc/footer.php') ?>
             <!-- End of Footer -->
