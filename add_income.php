@@ -1,11 +1,11 @@
 <?php 
 
 require_once('inc/top_header.php');
+require_once('inc/db.php');
 
 
 
-
-?>
+?> 
 </head>
 
 <body id="page-top">
@@ -34,94 +34,85 @@ require_once('inc/top_header.php');
                 <div class="row">
                     <div class="col">  
                      
-                    <form action="" mathed="GET">
-                    <div class="form-group">
-                        <label>Amount</label>
-                        <input type="text" class="form-control form-control-user" name="income_amount" placeholder="Please enter category name"> 
-                    </div>
-                    <div class="row">
-                        <div class="col-6">
-                                <div class="form-group">
-                                <label>Category </label>
-                                <select class="form-control" name="category_id">
-                                <option value="" disabled="" selected="" hidden="">Select Category </option>
-                                   <?php  
-                                   require_once('inc/db.php');
-                                     $select_category = "SELECT * FROM category WHERE category_purpose='income'"; 
-
-                                     $run_category = mysqli_query($conn, $select_category);  
-
-                                    //  while loop
-                                     while($row_category = mysqli_fetch_array($run_category)){ 
-                                         $category_id = $row_category['category_id'];
-                                         $category_name = $row_category['category_name'];  
-                                     ?>  
-
-                                     <option value="<?php echo $category_id ?>" ><?php echo  $category_name ?></option> 
-
-                                    <?php } ?>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                                <div class="form-group">
-                                <label>Receipt</label>
-                                <input type="file" class="form-control form-control-user" name="income_receipt"  /> 
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label>Date</label>
-                                <input type="date" class="form-control form-control-user" name="income_date"  /> 
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label>Details</label>
-                                <textarea class="form-control" name="income_details"></textarea>
-                            </div>
-                        </div>  
-                        </div> 
+                    <form action="" method="POST" >
                         <div class="form-group">
-                        <input type="submit" class="btn btn-success" name="inser_btn" value="Add Income" /> </div>
-                </form>
+                            <label>Amount</label>
+                            <input type="text" class="form-control form-control-user" name="income_amount" placeholder="Please enter category name"> 
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Category </label>
+                                    <select class="form-control" name="category_id">
+                                    <option value="" disabled="" selected="" hidden="">Select Category </option>
+                                    <?php  
+                                    //    require_once('inc/db.php');
+                                        $select_category = "SELECT * FROM category WHERE category_purpose='income'"; 
 
+                                        $run_category = mysqli_query($conn, $select_category);  
 
+                                        //  while loop
+                                        while($row_category = mysqli_fetch_array($run_category)){ 
+                                            $category_id = $row_category['category_id'];
+                                            $category_name = $row_category['category_name'];  
+                                        ?>   
+                                        <option value="<?php echo $category_id ?>" ><?php echo  $category_name ?></option>  
+                                        <?php } ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Receipt</label>
+                                    <input type="file" class="form-control form-control-user" name="income_receipt"  /> 
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label>Date</label>
+                                    <input type="date" class="form-control form-control-user" name="income_date"  /> 
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label>Details</label>
+                                    <textarea class="form-control" name="income_details"></textarea>
+                                </div>
+                            </div>  
+                            </div> 
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-success" name="inser_btn"   /> 
+                            </div>
+                    </form>
+                    <?php    
+                        if (isset($_POST['inser_btn'])) {  
+                            $income_amount = $_POST['income_amount'];
+                            $category_id = $_POST['category_id']; 
+                            $income_details = $_POST['income_details'];
+                            $income_date = $_POST['income_date'];  
+                            $income_receipt_name = $_FILES['income_receipt']['name'];
+                            $income_receipt_tmp_name = $_FILES['income_receipt']['tmp_name'];
+                            $month = Date('m');
+                            $year = Date('y');  
+                            // Insert data query
+                            $insert_income = "INSERT INTO income(income_amount, category_id, income_details, income_receipt, income_date, income_month, income_year)
+                                VALUES('$income_amount', '$category_id', '$income_details', '$income_receipt_name', '$income_date', '$month', '$year')"; 
 
-                 <?php     
-                     
-                    
-                    // if (isset($_GET['inser_btn'])) { 
+                                $run_income = mysqli_query($conn, $insert_income);
 
-                        // $income_amount = $_GET['income_amount'];
-                        // // $category_id = $_GET['category_id'];
-                        // $income_receipt = $_GET['income_receipt'];
-                        // $income_details = $_GET['income_details'];
-
-                        // // insert data query 
-                        // $insert_category = "INSERT INTO income(income_amount, income_receipt, income_details, income_date) VALUES('$income_amount', '$income_receipt' ,' $income_details')";
-                        
-                        // $run_category = mysqli_query($conn, $insert_category);
-
-                        // if ($run_category === true) {
-                        //     echo "Date has been add";
-                        // } else {
-                        //     echo "Date has been not add";
-                        // } 
-                            
-                    // }  
-
-                    // ?>
-
-
-
-
-                </div>   
+                                if ($run_income === true) {
+                                    echo "Date has been add";
+                                } else {
+                                    echo "Date has been not add";
+                                }  
+                            }   
+                        ?>
+                   </div>   
             <!-- /.container-fluid -->
             </div> 
             </div> 
             <!-- End of Main Content -->
-                                     </div> 
+         </div> 
             <!-- Footer -->
              <?php require_once('inc/footer.php') ?>
             <!-- End of Footer -->
@@ -131,30 +122,8 @@ require_once('inc/top_header.php');
 
     </div>
     <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a> 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
+ 
+ 
     </div>
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
