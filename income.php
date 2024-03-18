@@ -68,8 +68,7 @@
                                             require_once('inc/db.php');
                                             $select_income = "SELECT * FROM income";  
                                             $run_income = mysqli_query($conn, $select_income); 
-                                            while($row_income = mysqli_fetch_array($run_income)){ 
-
+                                            while($row_income = mysqli_fetch_array($run_income)){  
                                             $income_id = $row_income['income_id'];
                                             $income_amount = $row_income['income_amount'];
                                             $category_id = $row_income['category_id'];
@@ -91,11 +90,7 @@
                                 </table>
                             </div>
                         </div>
-                    </div>
-
-                
-
-
+                    </div> 
                     </div>
                 </div>
 

@@ -48,7 +48,7 @@
                                                 echo "Date has been DELETE"; 
                                                  
                                             } else {
-                                                echo "Date has been not DELETE";
+                                                echo "Date has been not add";
                                             }  
                                         }   
                                     ?> 
@@ -58,7 +58,7 @@
                                             <th>ID</th> 
                                             <th>Category Name</th> 
                                             <th>Category Purpose</th> 
-                                            <th>Dalete</th> 
+                                            <th>Action</th> 
                                         </tr>
                                     </thead> 
                                     <tbody>
@@ -75,7 +75,10 @@
                                             <td><?php echo ucfirst($category_id); ?></td> 
                                             <td><?php echo ucfirst($category_name); ?></td> 
                                             <td><?php echo ucfirst($category_purpose); ?></td> 
-                                            <td><a href="category.php?del=<?php echo ($category_id); ?>" class="btn btn-danger delete_btn">DELETE</a></td> 
+                                            <td>
+                                                <a href="category.php?del=<?php echo ($category_id); ?>" class="btn btn-danger delete_btn">Delete</a>
+                                                <a href="edit_category.php?edit=<?php echo ($category_id); ?>" class="btn btn-success">Edit</a>
+                                             </td> 
                                         </tr>
                                         <?php } ?>
                                     </tbody>
