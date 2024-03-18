@@ -1195,7 +1195,9 @@ a.close.disabled {
         transition: none; } }
   .carousel-indicators .active {
     opacity: 1; }
-
+    .form-control { 
+      height: calc(2em + 0.75rem + 2px)   !important;
+  }
 @-webkit-keyframes spinner-border {
   to {
     -webkit-transform: rotate(360deg);
