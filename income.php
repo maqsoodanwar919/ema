@@ -60,7 +60,6 @@
                                             <th>Income Receipt</th> 
                                             <th>Income Details</th> 
                                             <th>Income Date</th> 
-                                            <th>Delete</th> 
                                             <th>Delete</th>  
                                         </tr>
                                     </thead> 
