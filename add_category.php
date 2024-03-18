@@ -47,19 +47,19 @@
                     </form>
  
                     <?php    
-                            require_once('inc/db.php');  
-                            if (isset($_POST['btn-submit'])) {  
-                                $category_name = $_POST['category_name'];
-                                $category_purpose = $_POST['category_purpose']; 
-                                // insert data query 
-                                $insert_category = "INSERT INTO category(category_name, category_purpose) VALUES('$category_name','$category_purpose')"; 
-                                $run_category = mysqli_query($conn, $insert_category); 
-                                if ($run_category === true) {
-                                    echo "Date has been add";
-                                } else {
-                                    echo "Date has been not add";
-                                }    
-                            }   
+                        require_once('inc/db.php');  
+                        if (isset($_POST['btn-submit'])) {  
+                            $category_name = $_POST['category_name'];
+                            $category_purpose = $_POST['category_purpose']; 
+                            // insert data query 
+                            $insert_category = "INSERT INTO category(category_name, category_purpose) VALUES('$category_name','$category_purpose')"; 
+                            $run_category = mysqli_query($conn, $insert_category); 
+                            if ($run_category === true) {
+                                echo "Date has been add";
+                            } else {
+                                echo "Date has been not add";
+                            }    
+                        }   
                         ?>
 
 

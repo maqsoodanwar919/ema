@@ -26,7 +26,7 @@
             <!-- Begin Page Content -->
             <div class="container-fluid"> 
                 <!-- Page Heading -->
-                <h1 class="h3 mb-4 text-gray-800">Delete Category</h1>
+                <h1 class="h3 mb-4 text-gray-800">Delete Income</h1>
                 <div class="row">
                     <div class="col"> 
                     
@@ -36,46 +36,56 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive"> 
-                                    <?php   
-                                     require_once('inc/db.php'); 
+                             <?php   
+                                    require_once('inc/db.php'); 
                                     if (isset($_GET['del'])) {  
                                         $del_id = $_GET['del']; 
                                             // Insert data query
-                                            $DELETE = "DELETE FROM category WHERE category_id='$del_id'";  
-                                            $run_DELETE = mysqli_query($conn, $DELETE);  
-                                          
+                                            $DELETE = "DELETE FROM income WHERE income_id='$del_id'";  
+                                            $run_DELETE = mysqli_query($conn, $DELETE);   
                                             if ($run_DELETE === true) {
                                                 echo "Date has been DELETE"; 
-                                                 
+                                                    
                                             } else {
                                                 echo "Date has been not DELETE";
                                             }  
                                         }   
-                                    ?> 
+                                ?> 
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
                                             <th>ID</th> 
-                                            <th>Category Name</th> 
-                                            <th>Category Purpose</th> 
-                                            <th>Dalete</th> 
+                                            <th>Income Amount</th> 
+                                            <th>Category Id</th> 
+                                            <th>Income Receipt</th> 
+                                            <th>Income Details</th> 
+                                            <th>Income Date</th> 
+                                            <th>Delete</th> 
+                                            
+                                            
                                         </tr>
                                     </thead> 
                                     <tbody>
                                         <?php  
                                             require_once('inc/db.php');
-                                            $select_category = "SELECT * FROM category";  
-                                            $run_category = mysqli_query($conn, $select_category); 
-                                            while($row_category = mysqli_fetch_array($run_category)){ 
-                                            $category_id = $row_category['category_id'];
-                                            $category_name = $row_category['category_name'];
-                                            $category_purpose = $row_category['category_purpose'];
+                                            $select_income = "SELECT * FROM income";  
+                                            $run_income = mysqli_query($conn, $select_income); 
+                                            while($row_income = mysqli_fetch_array($run_income)){ 
+                                            $income_id = $row_income['income_id'];
+                                            $income_amount = $row_income['income_amount'];
+                                            $category_id = $row_income['category_id'];
+                                            $income_receipt = $row_income['income_receipt'];
+                                            $income_details = $row_income['income_details'];
+                                            $income_date = $row_income['income_date'];
                                         ?>
                                         <tr>
+                                            <td><?php echo ucfirst($income_id); ?></td> 
+                                            <td><?php echo ucfirst($income_amount); ?></td> 
                                             <td><?php echo ucfirst($category_id); ?></td> 
-                                            <td><?php echo ucfirst($category_name); ?></td> 
-                                            <td><?php echo ucfirst($category_purpose); ?></td> 
-                                            <td><a href="category.php?del=<?php echo ($category_id); ?>" class="btn btn-danger delete_btn">DELETE</a></td> 
+                                            <td><?php echo ucfirst($income_receipt); ?></td> 
+                                            <td><?php echo ucfirst($income_details); ?></td> 
+                                            <td><?php echo ucfirst($income_date); ?></td>  
+                                            <td><a href="income.php?del=<?php echo ($income_id); ?>" class="btn btn-danger delete_btn">DELETE</a></td> 
                                         </tr>
                                         <?php } ?>
                                     </tbody>

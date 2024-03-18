@@ -30,24 +30,24 @@ require_once('inc/db.php');
             <!-- Begin Page Content -->
             <div class="container-fluid"> 
                 <!-- Page Heading -->
-                <h1 class="h3 mb-4 text-gray-800">All Income</h1>
+                <h1 class="h3 mb-4 text-gray-800">Add Expence </h1>
                 <div class="row">
                     <div class="col">  
                      
                     <form action="" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
                             <label>Amount</label>
-                            <input type="text" class="form-control form-control-user" name="income_amount" placeholder="Please enter category name"> 
+                            <input type="text" class="form-control form-control-user" name="expense_amount" placeholder="Please enter category name"> 
                         </div>
-                        <div class="row">
-                            <div class="col-6">
+                        <div class="row"> 
+                         <div class="col-6">
                                 <div class="form-group">
                                     <label>Category </label>
                                     <select class="form-control" name="category_id">
                                     <option value="" disabled="" selected="" hidden="">Select Category </option>
                                     <?php  
                                     //    require_once('inc/db.php');
-                                        $select_category = "SELECT * FROM category WHERE category_purpose='income'"; 
+                                        $select_category = "SELECT * FROM category WHERE category_purpose='expense'"; 
 
                                         $run_category = mysqli_query($conn, $select_category);  
 
@@ -64,19 +64,19 @@ require_once('inc/db.php');
                             <div class="col-6">
                                 <div class="form-group">
                                     <label>Receipt</label>
-                                    <input type="file" class="form-control form-control-user" name="income_receipt"  /> 
+                                    <input type="file" class="form-control form-control-user" name="expense_receipt"  /> 
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
                                     <label>Date</label>
-                                    <input type="date" class="form-control form-control-user" name="income_date"  /> 
+                                    <input type="date" class="form-control form-control-user" name="expense_date"  /> 
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
                                     <label>Details</label>
-                                    <textarea class="form-control" name="income_details"></textarea>
+                                    <textarea class="form-control" name="expense_details"></textarea>
                                 </div>
                             </div>  
                             </div> 
@@ -86,22 +86,23 @@ require_once('inc/db.php');
                     </form>
                     <?php    
                         if (isset($_POST['inser_btn'])) {  
-                            $income_amount = $_POST['income_amount'];
+                            $expense_amount = $_POST['expense_amount'];
                             $category_id = $_POST['category_id']; 
-                            $income_details = $_POST['income_details'];
-                            $income_date = $_POST['income_date'];  
-                            $income_receipt_name = $_FILES['income_receipt']['name'];
-                            $income_receipt_tmp_name = $_FILES['income_receipt']['tmp_name'];
+                            $expense_details = $_POST['expense_details']; 
+                            $expense_receipt_name = $_FILES['expense_receipt']['name'];
+                            $expense_receipt_tmp_name = $_FILES['expense_receipt']['tmp_name'];
+                            $expense_date = $_POST['expense_date'];  
                             $month = Date('m');
                             $year = Date('y');  
                                 // Insert data query
-                                $insert_income = "INSERT INTO income(income_amount, category_id, income_details, income_receipt, income_date, income_month, income_year)
-                                VALUES('$income_amount', '$category_id', '$income_details', '$income_receipt_name', '$income_date', '$month', '$year')";  
-                                $run_income = mysqli_query($conn, $insert_income); 
+                                $insert_expense = "INSERT INTO expense(expense_amount, category_id, expense_details, expense_receipt, expense_date, expense_month, expense_year)
+                                VALUES('$expense_amount', '$category_id', '$expense_details', '$expense_receipt_name', '$expense_date', '$month', '$year')";  
+                                $run_expense = mysqli_query($conn, $insert_expense); 
 
-                                if ($run_income === true) {
+                                if ($run_expense === true) {
                                     echo "Date has been add";
-                                    move_uploaded_file($income_receipt_tmp_name,"upload/$income_receipt_name");
+                                    move_uploaded_file($expense_receipt_tmp_name,"expance/$expense_receipt_name");
+
                                 } else {
                                     echo "Date has been not add";
                                 }  
