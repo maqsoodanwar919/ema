@@ -28,24 +28,24 @@
                 <div class="row">
                     <div class="col">
                     <?php   
-                                     require_once('inc/db.php'); 
-                                    if (isset($_GET['edit'])) {  
-                                        $edit_id = $_GET['edit']; 
-                                            // Insert data query
-                                            $update_query = "SELECT * FROM category WHERE category_id='$edit_id'";  
-                                            $run_update = mysqli_query($conn, $update_query);  
-                                            $row_category = mysqli_fetch_array($run_update); 
-                                                $category_name = $row_category['category_name'];
-                                                $category_purpose = $row_category['category_purpose'];
-                                          
-                                            if ($run_update === true) {
-                                                echo "Date has been update"; 
-                                                 
-                                            } else {
-                                                echo "Date has been not add";
-                                            }  
-                                        }   
-                                    ?> 
+                        require_once('inc/db.php'); 
+                            if (isset($_GET['edit'])) {  
+                                $edit_id = $_GET['edit']; 
+                                    // Insert data query
+                                    $update_query = "SELECT * FROM category WHERE category_id='$edit_id'";  
+                                    $run_update = mysqli_query($conn, $update_query);  
+                                    $row_category = mysqli_fetch_array($run_update); 
+                                        $category_name = $row_category['category_name'];
+                                        $category_purpose = $row_category['category_purpose'];
+                                    
+                                    if ($run_update === true) {
+                                        echo "Date has been update"; 
+                                            
+                                    } else {
+                                        echo "Date has been not add";
+                                    }  
+                                }   
+                    ?> 
                     <form action="" method="POST">
                         <div class="form-group">
                             <label>Category Name</label>
@@ -74,7 +74,7 @@
                             } else {
                                 echo "Date has been not add";
                             }    
-                        }   
+                         }   
                         ?>
 
 
