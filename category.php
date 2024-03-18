@@ -1,4 +1,6 @@
-<?php require_once('inc/top_header.php') ?>
+<?php require_once('inc/top_header.php'); 
+
+?>
 
 </head>
 
@@ -24,7 +26,7 @@
             <!-- Begin Page Content -->
             <div class="container-fluid"> 
                 <!-- Page Heading -->
-                <h1 class="h3 mb-4 text-gray-800">All Category</h1>
+                <h1 class="h3 mb-4 text-gray-800">Delete Category</h1>
                 <div class="row">
                     <div class="col"> 
                     
@@ -33,36 +35,47 @@
                             <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
                         </div>
                         <div class="card-body">
-                            <div class="table-responsive">
+                            <div class="table-responsive"> 
+                                    <?php   
+                                     require_once('inc/db.php'); 
+                                    if (isset($_GET['del'])) {  
+                                        $del_id = $_GET['del']; 
+                                            // Insert data query
+                                            $DELETE = "DELETE FROM category WHERE category_id='$del_id'";  
+                                            $run_DELETE = mysqli_query($conn, $DELETE);  
+                                          
+                                            if ($run_DELETE === true) {
+                                                echo "Date has been DELETE"; 
+                                                 
+                                            } else {
+                                                echo "Date has been not add";
+                                            }  
+                                        }   
+                                    ?> 
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
                                             <th>ID</th> 
                                             <th>Category Name</th> 
                                             <th>Category Purpose</th> 
+                                            <th>Dalete</th> 
                                         </tr>
                                     </thead> 
                                     <tbody>
-                                        <?php 
-                                        
-                                        
-                                        require_once('inc/db.php');
-
-                                        $select_category = "SELECT * FROM category"; 
-                                        
-                                        $run_category = mysqli_query($conn, $select_category);
-
-
-                                        while($row_category = mysqli_fetch_array($run_category)){ 
+                                        <?php  
+                                            require_once('inc/db.php');
+                                            $select_category = "SELECT * FROM category";  
+                                            $run_category = mysqli_query($conn, $select_category); 
+                                            while($row_category = mysqli_fetch_array($run_category)){ 
                                             $category_id = $row_category['category_id'];
                                             $category_name = $row_category['category_name'];
                                             $category_purpose = $row_category['category_purpose'];
-
                                         ?>
                                         <tr>
                                             <td><?php echo ucfirst($category_id); ?></td> 
                                             <td><?php echo ucfirst($category_name); ?></td> 
                                             <td><?php echo ucfirst($category_purpose); ?></td> 
+                                            <td><a href="category.php?del=<?php echo ($category_id); ?>" class="btn btn-danger delete_btn">DELETE</a></td> 
                                         </tr>
                                         <?php } ?>
                                     </tbody>
@@ -99,24 +112,7 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    
     </div>
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
