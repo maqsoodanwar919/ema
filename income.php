@@ -36,22 +36,21 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive"> 
-                                    <?php   
-                                     require_once('inc/db.php'); 
+                             <?php   
+                                    require_once('inc/db.php'); 
                                     if (isset($_GET['del'])) {  
                                         $del_id = $_GET['del']; 
                                             // Insert data query
                                             $DELETE = "DELETE FROM income WHERE income_id='$del_id'";  
-                                            $run_DELETE = mysqli_query($conn, $DELETE);  
-                                          
+                                            $run_DELETE = mysqli_query($conn, $DELETE);   
                                             if ($run_DELETE === true) {
                                                 echo "Date has been DELETE"; 
-                                                 
+                                                    
                                             } else {
                                                 echo "Date has been not DELETE";
                                             }  
                                         }   
-                                    ?> 
+                                ?> 
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
@@ -85,8 +84,7 @@
                                             <td><?php echo ucfirst($category_id); ?></td> 
                                             <td><?php echo ucfirst($income_receipt); ?></td> 
                                             <td><?php echo ucfirst($income_details); ?></td> 
-                                            <td><?php echo ucfirst($income_date); ?></td> 
-
+                                            <td><?php echo ucfirst($income_date); ?></td>  
                                             <td><a href="income.php?del=<?php echo ($income_id); ?>" class="btn btn-danger delete_btn">DELETE</a></td> 
                                         </tr>
                                         <?php } ?>
