@@ -11283,6 +11283,3 @@ body.sidebar-toggled footer.sticky-footer {
 body.sidebar-toggled footer.sticky-footer {
   width: 100%;
 }
-.form-control { 
-  height: calc(2em + 0.75rem + 2px)   !important;
-}
