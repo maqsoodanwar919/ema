@@ -28,54 +28,54 @@
                 <div class="row">
                     <div class="col">
                     <?php   
-                        require_once('inc/db.php'); 
-                            if (isset($_GET['edit'])) {  
-                                $edit_id = $_GET['edit']; 
-                                    // Insert data query
-                                    $update_query = "SELECT * FROM category WHERE category_id='$edit_id'";  
-                                    $run_update = mysqli_query($conn, $update_query);  
-                                    $row_category = mysqli_fetch_array($run_update); 
-                                        $category_name = $row_category['category_name'];
-                                        $category_purpose = $row_category['category_purpose'];
-                                    
-                                    if ($run_update === true) {
-                                        echo "Date has been update"; 
-                                            
-                                    } else {
-                                        echo "Date has been not add";
-                                    }  
-                                }   
-                    ?> 
-                    <form action="" method="POST">
-                        <div class="form-group">
-                            <label>Category Name</label>
-                            <input type="text" class="form-control form-control-user" name="category_name" value="<?php echo $category_name ?>" placeholder="Please enter category name">
-                        </div>
-                        <div class="form-group">
-                            <label>Category Name</label>
-                            <select class="form-control" name="category_purpose" >
-                                <option value="" disabled="" selected="" hidden=""><?php echo $category_purpose ?></option> 
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" class="btn btn-success" name="btn-submit" value="Add Category" />
-                        </div>
-                    </form>
+                    require_once('inc/db.php'); 
+                        if (isset($_GET['edit'])) {  
+                            $edit_id = $_GET['edit']; 
+                                // Insert data query
+                                $update_query = "SELECT * FROM category WHERE category_id='$edit_id'";  
+                                $run_update = mysqli_query($conn, $update_query);  
+                                $row_category = mysqli_fetch_array($run_update); 
+                                $category_name = $row_category['category_name'];
+                                $category_purpose = $row_category['category_purpose'];
+                                
+                                if ($run_update === true) {
+                                    echo "Date has been update"; 
+                                        
+                                } else {
+                                    echo "Date has been not add";
+                                }  
+                            }   
+                       ?> 
+                        <form action="" method="POST">
+                            <div class="form-group">
+                                <label>Category Name</label>
+                                <input type="text" class="form-control form-control-user" name="category_name" value="<?php echo $category_name ?>" placeholder="Please enter category name">
+                            </div>
+                            <div class="form-group">
+                                <label>Category Name</label>
+                                <select class="form-control" name="category_purpose" >
+                                    <option value="<?php echo $category_purpose ?>" selected="" ><?php echo $category_purpose ?></option> 
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-success" name="btn-submit" value="Update Category" />
+                            </div>
+                        </form>
  
-                    <?php    
-                        require_once('inc/db.php');  
-                        if (isset($_POST['btn-submit'])) {  
-                            $category_name = $_POST['category_name'];
-                            $category_purpose = $_POST['category_purpose'];  
-                            $insert_category = "INSERT INTO category(category_name, category_purpose) VALUES('$category_name','$category_purpose')"; 
-                            $run_category = mysqli_query($conn, $insert_category); 
-                            if ($run_category === true) {
-                                echo "Date has been add";
-                            } else {
-                                echo "Date has been not add";
-                            }    
-                         }   
-                        ?>
+                        <?php    
+                            require_once('inc/db.php');  
+                            if (isset($_POST['btn-submit'])) {  
+                                $e_category_name = $_POST['category_name'];
+                                $e_category_purpose = $_POST['category_purpose'];  
+                                $insert_category = "UPDATE category SET category_name='$e_category_name', category_purpose='$e_category_purpose' WHERE category_id =' $edit_id'" ; 
+                                $run_category = mysqli_query($conn, $insert_category); 
+                                if ($run_category === true) {
+                                    echo "Date has been add";
+                                } else {
+                                    echo "Date has been not add";
+                                }    
+                            }   
+                            ?>
 
 
                     </div>
@@ -107,14 +107,6 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-
-
- 
-  
-     
-
-
-           
 
 </body>
 
