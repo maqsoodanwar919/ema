@@ -27,7 +27,6 @@
                 <h1 class="h3 mb-4 text-gray-800">Add Category</h1>
                 <div class="row">
                     <div class="col">
-                    
                     <form action="" method="POST">
                         <div class="form-group">
                             <label>Category Name</label>
@@ -44,25 +43,22 @@
                         <div class="form-group">
                             <input type="submit" class="btn btn-success" name="btn-submit" value="Add Category" />
                         </div>
-                    </form>
- 
+                    </form> 
                     <?php    
                         require_once('inc/db.php');  
-                        if (isset($_POST['btn-submit'])) {  
-                            $category_name = $_POST['category_name'];
-                            $category_purpose = $_POST['category_purpose']; 
-                            // insert data query 
-                            $insert_category = "INSERT INTO category(category_name, category_purpose) VALUES('$category_name','$category_purpose')"; 
-                            $run_category = mysqli_query($conn, $insert_category); 
-                            if ($run_category === true) {
-                                echo "Date has been add";
-                            } else {
-                                echo "Date has been not add";
-                            }    
-                        }   
-                        ?>
-
-
+                            if (isset($_POST['btn-submit'])) {  
+                                $category_name = $_POST['category_name'];
+                                $category_purpose = $_POST['category_purpose']; 
+                                // insert data query 
+                                $insert_category = "INSERT INTO category(category_name, category_purpose) VALUES('$category_name','$category_purpose')"; 
+                                $run_category = mysqli_query($conn, $insert_category); 
+                                if ($run_category === true) {
+                                    echo "Date has been add";
+                                } else {
+                                    echo "Date has been not add";
+                                }    
+                            }   
+                        ?> 
                     </div>
                 </div>
 
