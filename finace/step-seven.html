@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="icon" href="assets/images/favicon.png" type="image/png">  
+	<link type="text/css" rel="stylesheet" href="assets/css/style.css" />
+	<link type="text/css" rel="stylesheet" href="assets/css/responsive.css" />  
+	<title>Your Finance Claim</title>
+ 
+</head>
+
+<body>
+	<div class="main_wrapper">
+		<header class="site__header">
+			<div class="inner__container">
+				<div class="site__header__inner d_flex justify_content_between">
+					<div class="site__logo">
+						<a href="#">
+							<img src="assets/images/logo.png" alt="logo" />
+						</a>
+					</div>
+					<div class="rating__sslsecure d_flex align_center">
+						<div class="sslsecure">
+							<img src="assets/images/ssl-secure-blue.svg" alt="ssl-secure" />
+						</div>
+						<div class="rating">
+							<img src="assets/images/rating.svg" alt="rating" />
+							<p class="text-blue">Rated 5 Stars <span class="text-green">‘Excellent’</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<section class="site__banner step__banner step__six">
+			<div class="inner__container">
+				<div class="site__banner__inner">
+				    <form class="step__form_wrap" id="main-form">
+                        <div class="step__form_inner">
+						    <div class="good_news_content">
+                                <h3 class="sec-main-heading text-d-blue">Let’s finalise your claim!</h3>
+								<p class="sec-para">All we need is your signature, as this will allow us to start working on your case.</p>
+							</div>
+							<div id="signature-pad-leaner" class="signature_pad_wrapper">
+								<button type="button" class="btn clear-sign" id="clear-signature">ADD YOUR SIGNATURE BY USING EITHER YOUR MOUSE OR FINGER/STYLUS</button>
+								<div class="main_sign_Wrap">
+									<h3 class="eSignature">E-Signature</h3>
+									<div class="canvas_wrapper">
+										<canvas id="myexistingcanvas" class="signature-pad-leaner" width="" height=""></canvas>
+									</div>
+								</div>
+							</div>
+							<div class="address_field_wrap mt-95">
+								<label class="form-label">How long have you lived at this address?</label>
+								<div class="form-group w-100">
+									<input type="tel" class="form-control" placeholder="123 LoremIpsum Road, Epson Manchester M41 2OK" id="how_lived_address" name="how_lived_address">
+								</div>
+								<div class="form-group w-385">
+									<select id="how_lived_address_select" name="title" class="form-control custom_select" required="">
+										<option value="">6 months+</option>
+										<option value="">7 months</option>
+										<option value="">1 year</option>
+									</select>
+								</div>
+
+								<div class="previous_address_wrap mt-95">
+									<label class="form-label">Please provide a previous address:</label>
+									<div class="custom_row align_center">
+										<div class="form-group w-100">
+											<input type="text" class="form-control" placeholder="Postcode" id="previous_address" name="previous_address">
+										</div>
+										<div class="form-group postcode_btn w-100">
+											<button type="button" class="theme_green_btn theme_blue_btn w-100">Search</button>
+										</div>
+									</div>
+									<div class="form-group w-100">
+										<input type="text" class="form-control" placeholder="" id="" name="populated_previous_address" readonly>
+									</div>
+								</div>	
+
+								
+								<div class="previous_address_wrap mt-95">
+									<label class="form-label">How long did you live at this address?</label>
+									<div class="form-group w-385">
+										<select id="did_you_live_this_address" name="title" class="form-control custom_select" required="">
+											<option class="first_option" selected="" value="">Select Option</option>
+											<option value="">Option 1</option>
+											<option value="">Option 2</option>
+											<option value="">Option 3</option>
+										</select>
+									</div>
+								</div>	
+
+								<div class="btn-wrap mt-50">
+									<button type="button" class="theme_green_btn move_next">SUBMIT MY CLAIM</button>
+								</div>
+							</div>
+						</div>	
+					</form>
+				</div>
+			</div>
+		</section> 
+	</div>
+	   
+ 
+</body>
+</html>

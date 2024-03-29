@@ -1,0 +1,325 @@
+@media (max-width: 1840px){ 
+    .site__banner::after {right: 15px;width: 630px;height: 500px;}
+}
+
+@media (max-width: 1680px){ 
+    .site__header {padding: 20px 0;}
+    .site__logo img{width: 150px;}
+    .sslsecure{width: 55px;}
+    .site__header .rating {margin-left: 20px;}
+    .site__header .rating img{width: 150px;}
+    .site__header .rating p {font-size: 14px;}
+    .site__banner{padding-top: 160px;min-height: 720px;}
+    .banner-main-heading {font-size: 79px;max-width: 780px;}
+    .sec-sub-heading {font-size: 28px;}
+    .reg_box_wrap .check_for_free {margin-top: 40px;margin-bottom: 30px;}
+    .car_registation_number {width: 350px;height: 80px;font-size: 40px;}
+    .reg_box_wrap .theme_green_btn {min-width: 300px;margin-left: 35px;}
+    .theme_green_btn{font-size: 22px;min-height: 85px;}
+    .reg__field_wrap .gb {height: calc(100% - 8px);}
+    .inner__container {max-width: 1280px;}
+}
+@media (max-width: 1580px){ 
+
+}
+@media(max-width:1480px){
+    .site__banner::after {right: 15px;width: 580px;height: 450px;}
+    .form-label {font-size: 40px;}
+    .form-control {min-height: 100px; font-size: 20px;} 
+    .theme_green_btn {max-width: 380px; font-size: 20px; min-height: 90px;}
+    .site__banner.site__banner {padding-top: 160px;}
+}
+@media(max-width:1367px){
+    .site__banner::after {right: 10px;width: 530px;height: 420px;}
+}
+@media(max-width:1280px){
+    .site__banner {padding-top: 130px;}
+    .inner__container {max-width: 1200px;}
+    .site__banner::after {right: 15px;width: 470px;height: 390px;}
+    .theme_container.footer-text.py-80.text-center{
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+@media(max-width:1199px){
+    .site__banner::after {display: none;}
+    .inner__container {max-width: 1020px;}
+    .banner-main-heading {font-size: 70px;}
+    .site__banner {min-height: 666px;}    
+    .progress__wrap { margin-bottom: 110px;}
+    .form-label {font-size: 35px;}
+}
+
+@media(max-width:991px){
+     .landing_page .inner__container {padding: 0px 35px;}
+      .banner-main-heading {font-size: 65px;}
+      .site__banner.site__banner {padding-top: 130px} 
+      .site__header {padding: 32px 32px;}
+      .site__logo img {width: 100px;}
+      .site__header .rating img {width: 100px;}
+      .site__header .rating p {font-size: 10px;margin-top: 0;}
+      .form-control {min-height: 68px;font-size: 16px;    border: 2px solid #5C5580;}
+      .progress__wrap {margin-bottom: 90px;}
+      .step__form_inner .form-label{margin-bottom: 22px;text-align: center;font-size: 26px;}  
+      .sec-sub-heading {font-size: 20px;}
+      .theme_green_btn {    max-width: 268px;font-size: 17px;min-height: 67px;}
+      .average_claim_text {margin-top: 25px;}
+      .theme_container {padding: 0 40px;}
+      .theme_container.mis_sold_pcp_inner {
+        padding: 70px 40px 75px;
+      }
+     .footer-text .sec-para {
+        font-size: 18px;
+      }
+    .site__banner {
+        min-height: 627px;
+    }    
+    .sec-main-heading {font-size: 40px;}
+    
+}
+
+@media(max-width:768px){ 
+   .col-xl-3{max-width: 100%;flex: 0 0 100%;}
+   .service_box {display: flex;align-items: center;margin-bottom: 40px;}
+   .service_box p {max-width: 100%;margin: 0 0 0 40px;}
+   .ico{max-width: 60px;width: 100%;text-align: start;}
+   .car_registation_number { width: 100%;}
+   .reg_box_wrap .theme_green_btn {min-width: 100%;margin-left: 0;margin-top: 25px;}
+   .reg__field_with_actionBtn.d_flex{flex-direction: column;}
+   .site__banner {min-height: 784px;}
+   .reg__field_wrap .gb {height: calc(100% - 3px);}
+   .mis_sold_pcp_inner {flex-direction: column;padding: 124px 40px 135px 40px;}
+   .mis_sold_pcp_content {max-width: 100%;flex: 0 0 100%;}
+   .after_line::after{display: none;}
+   .innre {max-width: 100%;text-align: left;}
+   .you_could_qualify.after_line.pl-90{padding-left: 0;}
+   .you_could_qualify{max-width: 100%; flex:0 0 100%;}
+   .you_could_qualify .theme_green_btn { max-width: 100%;}
+   .frequently_asked_questions_inner {flex-direction: column;}
+   .frequently_asked_content {max-width: 100%;flex: 0 0 100%;text-align: left;}
+   .frequently_asked_questions {max-width: 100%;flex: 0 0 100%;}
+   .frequently_asked_questions.pl-70{ padding-left: 0;margin-top: 30px;}
+   .theme_container {padding: 0 35px;}
+   .mobile-none{display: none;}
+   .mobile-block{display: block;}
+   .frequently_asked_questions .theme_green_btn{max-width: 100%;}
+   .card-body-inner {margin-left: 50px;}
+   .frequently_asked_wrap {padding: 120px 0 88px;}
+   .mis_sold_pcp{ padding: 100px 0px 100px 0px;}
+  .how_do_eligible .sec-main-heading {max-width: 400px;margin: 0 auto;}
+  .how_do_eligible_card p {margin-bottom: 0;max-width: 271px;margin: 0 auto;}
+  .how_do_eligible .theme_green_btn{max-width: 100%;}
+  .how_do_eligible_inner {
+    padding: 0  40px;
+  }
+  .frequently_asked_wrap {
+    padding: 50px 0 48px;
+}
+.banner-main-heading {
+    font-size: 52px;
+}
+}
+@media(max-width:569px){
+    .site__header {
+        padding: 32px 0px;
+    }
+    .banner-main-heading {
+        font-size: 58px;
+    }
+    .site__banner {
+        min-height: 728px;
+    }
+    .sec-main-heading {
+        font-size: 42px;
+    }
+    .sec-para {
+        font-size: 18px;
+    }
+    .how_do_eligible .sec-main-heading {
+        max-width: 300px;
+    }
+    .how_do_eligible_card p {
+        max-width: 225px;
+    }
+    .theme_container.mis_sold_pcp_inner {
+        padding: 0px 35px 0px;
+    }
+    .footer .footer_links a {
+        font-size: 20px;
+    }
+    .footer .footer_links a:after{
+        display: none;
+    }
+    .footer .footer_links{
+        flex-direction: column;
+    }
+    .footer_links li{
+        margin-bottom: 30px;
+        border-bottom: 2px solid ;
+        padding-bottom: 10px;
+    }
+}
+@media(min-width:481px){
+    
+}
+@media(max-width:480px){
+    .banner-main-heading {
+        font-size: 42px;
+        max-width: 305px;
+    }
+    .sec-sub-heading {
+        font-size: 18px;
+        max-width: 309px;
+        letter-spacing: 1px;
+    }
+    .reg_box_wrap .check_for_free {
+        margin-top: 20px;
+        margin-bottom: 16px;
+        font-size: 16px;
+    }
+    .sslsecure {
+        width: 38px;
+    }
+    .site__header .rating img {
+        width: 85px;
+    }
+    .site__header .rating p {
+        font-size: 8px;
+        margin-top: -2px;
+    }
+    .site__logo img {
+        width: 90px;
+    }
+    .site__banner.site__banner {
+        padding-top: 114px;
+    }
+    .car_registation_number {
+        height: 70px;
+        font-size: 37px;
+        padding-left: 50px;
+        box-shadow: 0 0 0 4px #FCFF64;
+    }
+    .site__banner {
+        min-height: 560px;
+    }
+    .ico img{
+        width: 27px;
+    }
+    .ico svg{
+        max-width: 27px;
+        height: 30px;
+    }
+    .ico {
+        max-width: 27px;
+    }
+    .service_box p {
+        margin: 0px 0 0 19px;
+        font-size: 16px;
+    }
+    .service_box {
+        margin-left: 17px;
+        margin-bottom: 25px;
+    }
+    .services {
+        padding: 34px 0;
+    }
+    .mis_sold_pcp {
+        padding: 50px 0px 50px 0px;
+    }
+    .sec-main-heading {
+        font-size: 32px;
+        max-width: 300px;
+    }
+    .mis_sold_pcp_content.pr-90{
+        padding-right: 0;
+        padding-bottom: 20px;
+    }
+    .sec-para {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .how_do_eligible .sec-main-heading {
+        max-width: 275px;
+    }
+    .how_do_eligible {
+        padding: 50px 0px;
+    }
+    .how_do_eligible {
+        padding: 60px 0px;
+    }
+    .frequently_asked_content.pr-70{
+        padding-right: 0;
+    }
+    .vertical-plus {
+        width: 7.5%;
+        height: 33%;
+        left: 42.75%;
+        top: 17.5%;
+    }
+    .horizontal-plus {
+        width: 36%;
+        height: 8.5%;
+        left: 27%;
+        top: 37.75%;
+    }
+    .rotate-svg {
+        left: -13px;
+        width: 39px;
+        height: 30px;
+    }
+    .card-body-inner {
+        margin-left: 42px;
+    }
+    .card-body-inner {
+        padding-top: 17px;
+        
+    }
+    .frequently_asked_questions .theme_green_btn {
+        margin-top: 0;
+    }
+
+.frequently_asked_questions .card.border-none {
+    border-bottom: none;
+    margin-bottom: 10px;
+}
+.how_do_eligible_item .sec-para {
+    font-size: 18px;
+}
+.how_do_eligible_card {
+    margin-bottom: 34px;
+}
+
+.gb img{
+    width: 27px;
+}
+.site__banner {
+    background: url(../images/site-banner-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  
+}
+.how_do_eligible_item {
+    margin-top: 10px;
+}
+.how_do_eligible .theme_green_btn {
+    margin-top: 12px;
+}
+.py-80 {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+}
+.how_do_eligible_card .number {
+    top: -10px;
+}
+.custom_list li {
+    margin-bottom: 15px;
+}
+
+.how_do_eligible_card {
+    padding-top: 89px;
+}
+.frequently_asked_questions.pl-70 {
+    margin-top: 16px;
+}
+}

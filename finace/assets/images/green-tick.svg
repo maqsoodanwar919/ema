@@ -1,0 +1,22 @@
+<svg width="31" height="25" viewBox="0 0 31 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="31" height="25" fill="#1E1E1E"/>
+<g id="MacBook Pro 16&#34; - 57" clip-path="url(#clip0_0_1)">
+<rect width="1920" height="2230" transform="translate(-372 -1751)" fill="white"/>
+<g id="Isolation Mode" opacity="0.54">
+<g id="Group">
+<path id="Vector" d="M-740.77 271.909C-667.13 345.468 -547.736 345.468 -474.096 271.909L-47.5724 -154.148C26.0675 -227.707 26.0675 -346.97 -47.5724 -420.529C-121.212 -494.088 -240.606 -494.088 -314.246 -420.529L-740.77 5.52734C-814.41 79.0865 -814.41 198.35 -740.77 271.909ZM-676.261 69.9687L-249.737 -356.088C-231.35 -374.454 -206.907 -384.569 -180.906 -384.569C-154.905 -384.569 -130.465 -374.454 -112.081 -356.088C-93.6912 -337.721 -83.5684 -313.308 -83.5684 -287.332C-83.5684 -261.356 -93.6944 -236.949 -112.081 -218.582L-538.605 207.474C-556.989 225.841 -581.432 235.949 -607.433 235.949C-633.434 235.949 -657.881 225.841 -676.264 207.474C-694.648 189.107 -704.774 164.694 -704.774 138.725C-704.774 112.755 -694.648 88.3353 -676.264 69.9687L-676.261 69.9687Z" fill="url(#paint0_linear_0_1)" fill-opacity="0.3"/>
+</g>
+</g>
+<rect id="Rectangle 95" x="-7.5" y="-9.5" width="44" height="44" rx="3.5" fill="#FDFCFF" stroke="#19DCB0" stroke-width="3"/>
+<path id="Vector_2" d="M3 14.6923L10.3529 22L28 3" stroke="#19DCB0" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_1" x1="-753.391" y1="284.517" x2="-56.6745" y2="-412.964" gradientUnits="userSpaceOnUse">
+<stop stop-color="#F4EFFF"/>
+<stop offset="1" stop-color="#EFEDF4"/>
+</linearGradient>
+<clipPath id="clip0_0_1">
+<rect width="1920" height="2230" fill="white" transform="translate(-372 -1751)"/>
+</clipPath>
+</defs>
+</svg>
